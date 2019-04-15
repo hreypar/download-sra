@@ -6,8 +6,8 @@ cmake_install.cmake
 install_manifest.txt
 CTestTestfile.cmake
 
-data
-results
+input
+output
 
 *.DS_Store
 .AppleDouble
