@@ -15,7 +15,7 @@
 #
 # Download SRA files.
 #--------------------------
-output([A-z0-9_/\-]*/)([A-z0-9]+)_[1|2].fastq.gz:R:
+'output([A-z0-9_/\-]*/)([A-z0-9]+)_[1|2].fastq.gz':R:
 	mkdir -p `dirname $target`
 	fastq-dump \
 		--split-files \
