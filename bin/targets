@@ -7,4 +7,5 @@ find -L input/ \
 -exec cut {} -f1,2 \; \
 | sed -r \
 	-e 's#^#output/#' \
-	-e 's#\s#/#'
+	-e 's#\s#/#' \
+	-e 's#$#_1.fastq.gz#'
