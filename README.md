@@ -11,5 +11,5 @@ This repository downloads [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format) fi
 
 ## Requirements ##
 
-- [fasterq-dump](https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump) from [SRA Tools](https://github.com/ncbi/sra-tools/wiki/Building-and-Installing-from-Source)
+- fastq-dump from [SRA Tools](https://github.com/ncbi/sra-tools/wiki/Building-and-Installing-from-Source)
 
