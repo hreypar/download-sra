@@ -2,6 +2,7 @@
 #
 # Script that prints mk targets to STDOUT
 #
+# I am hoping that generating forward files is enough
 find -L input/ \
 	-name "*.txt" \
 -exec cut {} -f1,2 \; \
