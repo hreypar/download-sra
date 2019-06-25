@@ -1,6 +1,6 @@
 # download-sra #
 
-Two options:
+Three options:
 
 find the fastq file link directly from the ENA mirror and use aspera like this
 `ascp -v -QT -l 300m -P33001 -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh era-fasp@fasp.sra.ebi.ac.uk:/vol1/fastq/SRR190/009/SRR1909069/SRR1909069_1.fastq.gz output/`
@@ -9,7 +9,18 @@ OR
 
 use `prefetch` and force it to use aspera to download .sra files, THEN convert them in the local to fastq using fastq-dump 
 
+The FTP server has the data organised as follows:
+sra/sra-instant/reads/ByRun/sra/SRR/SRRNNN/SRRNNNXXXX/SRRNNNXXXX.sra
+Where NNN are the first three digits of the accession.
 
+
+`prefetch --verbose --transport fasp --max-size 300G SRR1909069`
+
+OR
+
+use `fasterq-dump` but I don't know if this means we should check for integrity afterwards.
+
+`fasterq-dump --verbose --progress --temp output/ --outdir output/ SRR1909069`
 
 
 ## About ##
