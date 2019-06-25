@@ -44,3 +44,5 @@ This repository downloads paired-end [FASTQ](https://en.wikipedia.org/wiki/FASTQ
 
 Helena Reyes Gopar
 
+HRG wishes to credit [this](http://bioinfostar.com/2017/12/24/How-to-download-SRA-data-en/) blog post as early inspiration for this module.
+
