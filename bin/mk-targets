@@ -4,9 +4,6 @@
 # hreyes June 2019
 #
 find -L input/ \
+	-type f \
 	-name "SraRunTable*.txt" \
--exec cut {} -f1,2 \; \
-| sed -r \
-	-e 's#^#output/#' \
-	-e 's#\s#/#' \
-	-e 's#$#_1.fastq.gz#'
+-exec awk '{print $1}' {} +
