@@ -1,10 +1,10 @@
 #!/bin/bash
 #
 # Script that prints mk targets to STDOUT
+# hreyes June 2019
 #
-# I am hoping that generating forward files is enough
 find -L input/ \
-	-name "*.txt" \
+	-name "SraRunTable*.txt" \
 -exec cut {} -f1,2 \; \
 | sed -r \
 	-e 's#^#output/#' \
