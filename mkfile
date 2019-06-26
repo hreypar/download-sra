@@ -15,6 +15,9 @@
 #
 # Download SRA files.
 #--------------------------
+
+prefetch --verbose --max-size 300G --ascp-path "/home/hreyes/.aspera/connect/bin/ascp|/home/hreyes/.aspera/connect/etc/asperaweb_id_dsa.openssh" --output-directory output/ SRR1016425
+
 'output([A-z0-9_/\-]*/)([A-z0-9]+)_[1|2].fastq.gz':R:
 	mkdir -p `dirname $target`
 	fastq-dump \
