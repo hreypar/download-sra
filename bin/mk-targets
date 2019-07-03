@@ -6,4 +6,5 @@
 find -L input/ \
 	-type f \
 	-name "SraRunTable*.txt" \
--exec awk '{print $1}' {} +
+-exec awk -f bin/parse-run-table.awk {} \;
+
