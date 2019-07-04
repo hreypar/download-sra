@@ -4,7 +4,7 @@
 #
 # USAGE:
 # alternative 1 -single target execution
-# `mk <specific_target>` where specific_target is any line printed by `bin/targets`
+# `mk <specific_target>` where specific_target is any line printed by `bin/mk-targets`
 #
 # alternative 2 -multiple target execution in tandem
 # `bin/mk-targets | xargs mk`
