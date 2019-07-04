@@ -6,5 +6,8 @@
 find -L input/ \
 	-type f \
 	-name "SraRunTable*.txt" \
--exec bin/parse-run-table.awk {} \;
+-exec bin/parse-run-table.awk {} \; \
+| sed -r \
+	-e 's#^input/#output/#' \
+	-e 's#$#.sra#'
 
