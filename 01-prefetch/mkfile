@@ -19,7 +19,7 @@
 'output/%.sra':
 	mkdir -p `dirname $target`
 	prefetch \
-		--verbose
+		--verbose \
 		--max-size $MAX_SIZE_FILES \
 		--ascp-path $ASCP_PATH_AND_KEY \
 		--output-directory `dirname $target` \
