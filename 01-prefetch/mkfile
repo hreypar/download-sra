@@ -10,7 +10,8 @@
 # `bin/mk-targets | xargs mk`
 #
 #
-# Load options from file
+# load options from file
+#------------------------------
 < config.mk
 #
 # download SRA files from NCBI
@@ -22,5 +23,5 @@
 		--max-size $MAX_SIZE_FILES \
 		--ascp-path $ASCP_PATH_AND_KEY \
 		--output-directory `dirname $target` \
-		SRR1016425
+		`basename $stem`
 
