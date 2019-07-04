@@ -7,7 +7,6 @@ install_manifest.txt
 CTestTestfile.cmake
 
 data
-input
 output
 
 *.DS_Store
