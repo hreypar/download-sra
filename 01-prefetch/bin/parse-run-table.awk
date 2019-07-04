@@ -8,18 +8,19 @@
 #
 BEGIN {
 	FS = "\t"
+	# preserve user original directory structure
 	get_path(ARGV[1])
 }
  
 NR==1 {
-	# store the header in array, indexes are col names
+	# store the header in array, indexes are the column names
 	for (h = 1; h <= NF; h++) {
 		header[$h] = h
 	}
 }
 NR>1 { 
 	# use header indexes to obtain the fields we need.
-	# note these are all mandatory fields in SRA submissions
+	# (note these are all mandatory fields in SRA submissions)
 	print_target($header["BioProject"], $header["Sample_Name"], $header["Run"])
 }
 #---------------functions---------------#
@@ -29,7 +30,8 @@ function get_path(file_route) {
 	path = arr[1]
 }
 
-# print out the target name
+# print out the target name with its original directory
+# and added directories for clarity
 function print_target(bio_project, sample, run) {
 	print path \
 		bio_project \
