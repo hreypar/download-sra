@@ -1,5 +1,5 @@
 # DESCRIPTION
-# this module downloads SRA files and converts them to FASTQ format.
+# this module dumps SRA files downloaded with `01-prefetch` to FASTQ format.
 # the output is a pair of FASTQ files for each SRA identifier.
 #
 # USAGE:
@@ -13,16 +13,13 @@
 # Load options from file
 < config.mk
 #
-# download SRA files from NCBI
+# dump SRA files into FASTQ format
 #------------------------------
-
-
-prefetch --verbose --max-size 300G --ascp-path "/home/hreyes/.aspera/connect/bin/ascp|/home/hreyes/.aspera/connect/etc/asperaweb_id_dsa.openssh" --output-directory output/ SRR1016425
-
-'output([A-z0-9_/\-]*/)([A-z0-9]+)_[1|2].fastq.gz':R:
-	mkdir -p `dirname $target`
+output/%_1.fastq.gz \
+output/%_2.fastq.gz:	output/%.sra
 	fastq-dump \
 		--split-files \
 		--gzip \
-		--outdir `dirname $target` \
-		$stem2
+		--outdir `dirname $prereq`
+		$prereq
+
