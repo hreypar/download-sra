@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+#
+# Script that prints mk targets to STDOUT
+# hreyes July 2019
+#
+find -L input/ \
+	-type f \
+	-name "*.sra" \
+| sed -r \
+	-e 's#^input/#output/#' \
+	-e 's#.sra$#.fastq.gz#'
