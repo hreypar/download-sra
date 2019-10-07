@@ -10,16 +10,15 @@
 # `bin/mk-targets | xargs mk`
 #
 #
-# Load options from file
-< config.mk
-#
 # dump SRA files into FASTQ format
 #------------------------------
 output/%_1.fastq.gz \
-output/%_2.fastq.gz:	output/%.sra
+output/%_2.fastq.gz:	input/%.sra
+	mkdir -p `dirname $target`
 	fastq-dump \
 		--split-files \
+		--readids \
 		--gzip \
-		--outdir `dirname $prereq` \
+		--outdir `dirname $target` \
 		$prereq
 
