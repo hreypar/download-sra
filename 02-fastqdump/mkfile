@@ -16,7 +16,6 @@ output/%_1.fastq.gz:	input/%.sra
 	mkdir -p `dirname $target`
 	fastq-dump \
 		--split-files \
-		--readids \
 		--gzip \
 		--outdir `dirname $target` \
 		$prereq
