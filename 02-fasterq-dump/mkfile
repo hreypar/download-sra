@@ -21,7 +21,7 @@ output/%.fastq:	input/%.sra
 		--progress \
 		--split-files \
 		--temp `dirname $target` \
-		--outdir `dirname $target`
+		--outdir `dirname $target` \
 		--outfile $stem \
 		$prereq
 
