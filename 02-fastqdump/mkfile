@@ -12,11 +12,13 @@
 #
 # dump SRA files into FASTQ format
 #------------------------------
-output/%_1.fastq.gz:	input/%.sra
+output/%_1.fastq:	input/%.sra
 	mkdir -p `dirname $target`
-	fastq-dump \
+	fasterq-dump \
+		--threads 6 \
+		--progress \
 		--split-files \
-		--gzip \
+		--temp `dirname $target` \
 		--outdir `dirname $target` \
 		$prereq
 
