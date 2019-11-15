@@ -8,4 +8,4 @@ find -L input/ \
 	-name "*.sra" \
 | sed -r \
 	-e 's#^input/#output/#' \
-	-e 's#.sra$#_1.fastq.gz#'
+	-e 's#.sra$#_1.fastq#'
