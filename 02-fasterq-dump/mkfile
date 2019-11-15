@@ -9,16 +9,19 @@
 # alternative 2 -multiple target execution in tandem
 # `bin/mk-targets | xargs mk`
 #
-#
+# Read in config
+< config.mk
+
 # dump SRA files into FASTQ format
 #------------------------------
-output/%_1.fastq:	input/%.sra
+output/%.fastq:	input/%.sra
 	mkdir -p `dirname $target`
 	fasterq-dump \
-		--threads 6 \
+		--threads $FQD_THREADS \
 		--progress \
 		--split-files \
 		--temp `dirname $target` \
-		--outdir `dirname $target` \
+		--outdir `dirname $target`
+		--outfile $stem \
 		$prereq
 
